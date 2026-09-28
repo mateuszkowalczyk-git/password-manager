@@ -1,11 +1,24 @@
-Prosty program napisany w Pythonie, który pobiera od użytkownika trzy liczby w systemie binarnym, konwertuje je na system dziesiętny i sprawdza, czy tworzą one ciąg kolejnych liczb całkowitych w dowolnej kolejności.
+# Secure Password Manager 🔐
 
-## Funkcjonalności
-* Ręczna konwersja z systemu binarnego na dziesiętny.
-* Sprawdzanie warunku kolejności liczb niezależnie od kolejności wprowadzania (np. `10`, `100`, `11` -> 2, 4, 3 -> kolejne).
+Lokalny menedżer haseł napisany w języku Python. Projekt prezentuje praktyczne zastosowanie podstaw kryptografii, bezpiecznego generowania liczb losowych oraz zarządzania poufnymi danymi w aplikacjach konsolowych.
 
-## Jak uruchomić?
-1. Upewnij się, że masz zainstalowane środowisko Python 3.
-2. Pobierz repozytorium i uruchom plik:
-   ```bash
-   python kolejne_binarne.py
+## 🚀 Główne funkcjonalności
+
+* **Kryptograficznie bezpieczny generator haseł:** Wykorzystuje wbudowany moduł `secrets` (CSPRNG) zamiast standardowego, przewidywalnego modułu `random`, co gwarantuje wysoki poziom bezpieczeństwa generowanych ciągów.
+* **Szyfrowanie danych (AES):** Zapisane hasła są szyfrowane symetrycznie przy użyciu algorytmu AES w trybie CBC (za pomocą modułu Fernet z biblioteki `cryptography`).
+* **Lokalne zarządzanie kluczami:** Automatyczne generowanie i wczytywanie głównego klucza szyfrującego (`secret.key`).
+* **Trwały magazyn danych:** Przechowywanie zaszyfrowanych wpisów w lokalnym pliku `baza.json` z wykorzystaniem bezpiecznej obsługi plików w Pythonie (menedżery kontekstu `with open`).
+
+## 🛠️ Wymagania i technologie
+
+* Python 3.x
+* Biblioteka `cryptography`
+* Wbudowane moduły Pythona: `secrets`, `json`, `os`
+
+## ⚙️ Instalacja i uruchomienie
+
+1. Sklonuj repozytorium lub pobierz pliki projektu na swój dysk.
+2. Zainstaluj wymaganą bibliotekę kryptograficzną:
+   
+```bash
+   pip install cryptography
